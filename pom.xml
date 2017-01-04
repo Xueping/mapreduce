@@ -12,9 +12,17 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spark.version>2.0.2</spark.version>
+    <hadoop.version>2.0.0-cdh4.0.0</hadoop.version>
+    <hadoop.core.version>2.0.0-mr1-cdh4.0.1</hadoop.core.version>
   </properties>
 
+	<repositories>
+	    <repository>
+	      <id>cloudera</id>
+	      <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+	    </repository>
+	  </repositories>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -25,23 +33,31 @@
     <dependency>
         <groupId>org.apache.hadoop</groupId>
         <artifactId>hadoop-hdfs</artifactId>
-        <version>2.0.0-cdh4.0.0</version>
+        <version>${hadoop.version}</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>jdk.tools</groupId>
+        <artifactId>jdk.tools</artifactId>
+        <version>1.6</version>
+        <scope>system</scope>
+	    <systemPath>D:/libs/tools-1.6.0.jar</systemPath>
     </dependency>
  
     <dependency>
 	    <groupId>org.apache.hadoop</groupId>
 	    <artifactId>hadoop-auth</artifactId>
-	    <version>2.0.0-cdh4.0.0</version>
+	    <version>${hadoop.version}</version>
 	</dependency>
     <dependency>
         <groupId>org.apache.hadoop</groupId>
         <artifactId>hadoop-common</artifactId>
-        <version>2.0.0-cdh4.0.0</version>
+        <version>${hadoop.version}</version>
     </dependency>
     <dependency>
         <groupId>org.apache.hadoop</groupId>
         <artifactId>hadoop-core</artifactId>
-        <version>2.0.0-mr1-cdh4.0.1</version>
+        <version>${hadoop.core.version}</version>
     </dependency>
   </dependencies>
 </project>
